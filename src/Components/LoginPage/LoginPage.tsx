@@ -2,25 +2,32 @@ import { Button } from '../lib/Button'
 import { InputField } from '../lib/InputField'
 import { Formik } from 'formik'
 import { FormSchema } from '../../validations/FormSchema'
-// import {Navigate} from 'react-router-dom';
+import { useStore } from '../../store/useStore'
+import { useNavigate } from 'react-router-dom';
+// import classNames from 'classnames'
 
-export const LoginPage = ({setUser}:any) => {
-  // const navigate = useNavigate();
+
+export const LoginPage = () => {
+ 
+  const navigate = useNavigate();
+  const { setUname, setPassword } = useStore();
   return (
     <>
       <Formik initialValues={{ uname: '', password: '' }}
         validationSchema={FormSchema}
         onSubmit={(values) => {
           console.log(values)
-          setUser(values)
-          return
+          setUname(values.uname);
+          setPassword(values.password);
+          navigate("/home");
+
         }}>
         {({ errors, handleSubmit, handleChange, values }) => {
           return (
             <>
               <form onSubmit={handleSubmit}>
                 <InputField type="text"
-                  label="Username"
+                  label="Username : "
                   value={values.uname}
                   name="uname"
                   onChange={handleChange}
@@ -30,8 +37,10 @@ export const LoginPage = ({setUser}:any) => {
                   <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.uname}</span>
                 ) : null}
 
+                <br />
+
                 <InputField type="password"
-                  label="Password"
+                  label="Password : "
                   value={values.password}
                   name="password"
                   onChange={handleChange}
@@ -39,9 +48,10 @@ export const LoginPage = ({setUser}:any) => {
                 {errors.password ? (
                   <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.password}</span>
                 ) : null}
-                <Button children="Login"></Button>
+                <br />
+                <Button  secondary={true} children="Login"></Button>
               </form>
-              
+
             </>
 
 
