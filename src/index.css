@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    padding: 0px;
-    margin: 0px;
-}
+@layer base {
+    @font-face {
+        font-family: Proxima Nova;
+        font-weight: 500;
+        src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
+      }
+  }

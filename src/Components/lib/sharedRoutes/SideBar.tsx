@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineContacts, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
+import BANNER from '../../../assets/bg.avif';
 const SideBar = () => {
 
     const [open, setOpen] = useState(true);
     const [submenuOpen, setSubMenuOpen] = useState(true);
     return (
         <div className="flex space-x-6 items-center">
-            <div className={`${open ? 'w-60' : 'w-20'} duration-300 h-screen bg-blue-900  relative`}>
+            <div className={`${open ? 'w-60' : 'w-20'} duration-300 h-screen bg-blue-900 p-0 relative`}>
                 <div className={`absolute bg-white cursor-pointer rounded-full -right-4 top-14 h-10 w-9 shadow-lg flex justify-center items-center  ${!open && "rotate-180"}`}>
                     <AiOutlineArrowLeft
                         fontSize={20}
@@ -31,12 +32,12 @@ const SideBar = () => {
                                     {sidebar.icons ? sidebar.icons : <AiOutlineContacts />}
                                 </span>
                                 <span
-                                    className={`text-base font-medium flex-1 ${!open && "scale-0"}`}>
+                                    className={`text-base font-medium flex-0.5 ${!open && "scale-0"}`}>
                                     {sidebar.title}
                                 </span>
 
                                 {sidebar.submenu && open && (
-                                    <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"}`} onClick={() => setSubMenuOpen(!submenuOpen)} />
+                                    <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"} space-x-reverse`} onClick={() => setSubMenuOpen(!submenuOpen)} />
                                 )}
                             </li>
 
@@ -59,8 +60,8 @@ const SideBar = () => {
                     ))}
                 </ul>
             </div>
-            <div className='p-7 text-2xl font-semibold flex-1 h-screen'>
-                <h3>HomePage</h3>
+            <div className='p-0 flex'>
+                <img src={BANNER} alt="" />
             </div>
         </div >
     )

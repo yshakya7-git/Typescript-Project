@@ -4,7 +4,8 @@ import {AiOutlineHome, AiOutlineShoppingCart, AiOutlineBook, AiOutlineLogout} fr
 export const SideBarItems = [
     {
         title: "Home",
-        icons: <AiOutlineHome />
+        icons: <AiOutlineHome />,
+        to:"/home",
     },
     {
         title: "About",
@@ -14,6 +15,7 @@ export const SideBarItems = [
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,
+        to: "/product",
         submenuItems: [
             {
                 title: "Add Products"

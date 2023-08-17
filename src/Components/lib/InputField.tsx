@@ -13,7 +13,7 @@ interface InputProps {
 }
 
 export const InputField = ({ label, type, value, name, placeholder, disabled, onChange }: InputProps) => {
-    const classes = classNames(`border-2 w-[220px]  placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500`);
+    const classes = classNames(`border-2 w-[220px] placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500`);
     return (
         <div>
             <label htmlFor={label}>{label}</label>

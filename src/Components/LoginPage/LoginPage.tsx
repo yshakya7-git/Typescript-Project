@@ -12,7 +12,7 @@ export const LoginPage = () => {
   const { setUname, setPassword } = useStore();
   return (
   
-      <div className="w-screen h-screen flex items-center justify-center m-0 p-0">
+      <div className="h-screen flex items-center justify-center ">
         <Image />
         <div className='w-[300px] h-[480px] bg-[#f5f5f5] flex flex-col justify-center p-[2rem] items-center'>
           <div className='w-full flex flex-col p-[0.5rem]'>
@@ -36,7 +36,7 @@ export const LoginPage = () => {
                         value={values.uname}
                         name="uname"
                         onChange={handleChange}
-                        placeholder="Please enter your name"
+                        placeholder=""
                       />
                       {errors.uname ? (
                         <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.uname}</span>
@@ -49,10 +49,11 @@ export const LoginPage = () => {
                         value={values.password}
                         name="password"
                         onChange={handleChange}
-                        placeholder="Please enter your password" />
+                        placeholder="" />
                       {errors.password ? (
                         <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.password}</span>
                       ) : null}
+                      
                       <br />
                       <Button secondary={true} children="Login"></Button>
                     </form>
