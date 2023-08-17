@@ -7,7 +7,8 @@ interface ButtonProps {
 }
 
 export const Button = ({ children, secondary }: ButtonProps) => {
-  const classes = classNames("mx-auto px-3 py-1.5 border", {
+
+  const classes = classNames("mx-auto px-3 py-1.5 border rounded", {
     "border-blue-900 bg-blue-900 text-white": secondary
   });
 

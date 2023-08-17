@@ -1,4 +1,5 @@
-import { ChangeEvent } from "react"
+import { ChangeEvent } from "react";
+import classNames from "classnames";
 
 interface InputProps {
     label: string,
@@ -9,10 +10,10 @@ interface InputProps {
     disabled?: boolean,
     onChange: (e: ChangeEvent<HTMLInputElement>) => void,
     
-
 }
 
 export const InputField = ({ label, type, value, name, placeholder, disabled, onChange }: InputProps) => {
+    const classes = classNames(`border-2 w-[220px]  placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500`);
     return (
         <div>
             <label htmlFor={label}>{label}</label>
@@ -24,6 +25,7 @@ export const InputField = ({ label, type, value, name, placeholder, disabled, on
                 placeholder={placeholder}
                 onChange={onChange}
                 disabled={disabled}
+                className={classes}
             />
              
 
