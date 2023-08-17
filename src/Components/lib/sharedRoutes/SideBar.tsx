@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineContacts, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
 import BANNER from '../../../assets/bg.avif';
+import { Link } from 'react-router-dom';
 const SideBar = () => {
 
     const [open, setOpen] = useState(true);
@@ -16,9 +17,7 @@ const SideBar = () => {
                 </div>
                 <div className='text-white text-sm flex items-center space-x-4 cursor-pointer p-3'>
                     <div className='flex space-x-4 w-96 p-[12px]'>
-
                         <AiOutlineUser size={24} />
-
                         <h1 className={`text-white font-medium text-xl justify-center ${!open && "scale-0"} `}>Admin</h1>
                     </div>
                 </div>
@@ -33,9 +32,8 @@ const SideBar = () => {
                                 </span>
                                 <span
                                     className={`text-base font-medium flex-0.5 ${!open && "scale-0"}`}>
-                                    {sidebar.title}
+                                    <Link to={sidebar.to}>{sidebar.title}</Link>
                                 </span>
-
                                 {sidebar.submenu && open && (
                                     <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"} space-x-reverse`} onClick={() => setSubMenuOpen(!submenuOpen)} />
                                 )}
@@ -47,7 +45,7 @@ const SideBar = () => {
                                         <li key={index}
                                             className={`text-white text-xs flex items-center space-x-4 cursor-pointer p-[0.5rem] px-[3.5rem]`}>
                                             <span className={`${!submenuOpen && "scale-0"}`}>
-                                                {subMenuItem.title}
+                                                <Link to={subMenuItem.to}>{subMenuItem.title}</Link>
                                             </span>
 
                                         </li>

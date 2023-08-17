@@ -9,7 +9,8 @@ export const SideBarItems = [
     },
     {
         title: "About",
-        icons: <AiOutlineBook/>
+        icons: <AiOutlineBook/>,
+        to: "/about"
     },
     {
         title: "Products",
@@ -18,23 +19,28 @@ export const SideBarItems = [
         to: "/product",
         submenuItems: [
             {
-                title: "Add Products"
+                title: "Add Products",
+                to: "/addProduct"
             },
             {
-                title: "View Products"
+                title: "View Products",
+                to: "/viewProducts"
             },
             {
-                title: "Buy Products"
+                title: "Buy Products",
+                to: "buyProducts"
             },
         ],
     },
 {
-    title: "Contacts"
+    title: "Contacts",
+    to: "/contacts"
     
 },
 {
     title: "Logout",
-    icons: <AiOutlineLogout/>
+    icons: <AiOutlineLogout/>,
+    to:"/"
 
 }
 ]
