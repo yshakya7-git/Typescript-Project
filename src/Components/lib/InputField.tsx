@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 interface InputProps {
     label: string,
-    type: 'text' | 'number' | 'email' | 'password',
+    type: 'text' | 'number' | 'email' | 'password' |'search',
     value: string | number,
     name: string,
     placeholder: string,

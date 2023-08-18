@@ -23,7 +23,7 @@ export const SideBarItems = [
                 to: "/addProduct"
             },
             {
-                title: "View Products",
+                title: "Product List",
                 to: "/viewProducts"
             },
             {

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineContacts, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
-import BANNER from '../../../assets/bg.avif';
 import { Link } from 'react-router-dom';
+import { AboutImage } from '../image/AboutImage';
 const SideBar = () => {
 
     const [open, setOpen] = useState(true);
@@ -10,7 +10,7 @@ const SideBar = () => {
     return (
         <div className="flex p-0 fixed bottom-0 top-0 items-center">
             <div className={`${open ? 'w-60' : 'w-20'} duration-300 h-screen bg-blue-900 p-0 relative top-0`}>
-                <div className={`absolute bg-white cursor-pointer rounded-full -right-4 top-14 h-10 w-9 shadow-lg flex justify-center items-center  ${!open && "rotate-180"}`}>
+                <div className={`absolute bg-white cursor-pointer rounded-full -right-2 top-14 h-8 w-9 shadow-lg flex justify-center items-center  ${!open && "rotate-180"}`}>
                     <AiOutlineArrowLeft
                         fontSize={20}
                         onClick={() => setOpen(!open)} />
@@ -58,8 +58,8 @@ const SideBar = () => {
                     ))}
                 </ul>
             </div>
-            <div className='p-0 flex'>
-                <img src={BANNER} alt="" />
+            <div className='flex h-screen'>
+                <AboutImage/>
             </div>
         </div >
     )
