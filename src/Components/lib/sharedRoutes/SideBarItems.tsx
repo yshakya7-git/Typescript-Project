@@ -16,7 +16,7 @@ export const SideBarItems = [
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,
-        to: "/product",
+        to: "",
         submenuItems: [
             {
                 title: "Add Products",
