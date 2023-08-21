@@ -1,6 +1,8 @@
 import ABOUT from "../../assets/cover.jpg";
+import SideBar from "../lib/sharedRoutes/SideBar";
 
 export const About = () => {
+  <SideBar />
   return (
     <div>
       <div className="relative w-[800px] h-[400px] border-[3px]">

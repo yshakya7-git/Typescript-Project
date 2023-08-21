@@ -6,6 +6,7 @@ import SideBar from './Components/lib/sharedRoutes/SideBar';
 import { About } from './Components/About/About';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ViewProducts } from './Components/Products/ViewProducts';
+import { DemoTable } from './Components/lib/table/DemoTable';
 function App() {
 
   const queryClient = new QueryClient();
@@ -20,6 +21,8 @@ function App() {
           <Route path='/home' element={<SideBar />} />
           <Route path='/about' element={<About />} />
           <Route path='/viewProducts' element={<ViewProducts />} />
+          <Route path='/table' element={<DemoTable />} />
+
 
           <Route path='*' element={<NotFoundPage />} />
 

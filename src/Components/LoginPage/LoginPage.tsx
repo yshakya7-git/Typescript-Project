@@ -24,7 +24,7 @@ export const LoginPage = () => {
                 console.log(values)
                 setUname(values.uname);
                 setPassword(values.password);
-                navigate("/");
+                navigate("/home");
 
               }}>
               {({ errors, handleSubmit, handleChange, values }) => {

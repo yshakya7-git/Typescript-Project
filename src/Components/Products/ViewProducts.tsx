@@ -10,17 +10,14 @@ export const ViewProducts = () => {
     const tableDataClasses = classNames('border border-slate-300 ...');
 
     const [productList, setProductList] = useState<any[]>([]);
-    const [displayProduct, setDisplayProduct] = useState<any[]>([]);
+    // const [displayProduct, setDisplayProduct] = useState<any[]>([]);
 
     const { isLoading, error } = useQuery(["repo"], () =>
         axios.get(' https://api.escuelajs.co/api/v1/products')
             .then(
-                (res) => (setProductList(res.data),
-                    setDisplayProduct(res.data))
+                (res) => (setProductList(res.data)
             ),
-    );
-
-    console.log(displayProduct,);
+    ));
 
     if (isLoading) {
         return 'Loading...'
@@ -30,22 +27,22 @@ export const ViewProducts = () => {
         return 'An error has occurred:'
     }
 
-    const searchProduct = (query: any) => {
-        if (!query) {
-            const filterProductList = productList.filter((product) => {
-                return product.title.includes(query) || product.description.includes(query);
-            });
-            setDisplayProduct(filterProductList);
-        } else {
-            setProductList(displayProduct);
-        }
-    }
+    // const searchProduct = (query: any) => {
+    //     if (!query) {
+    //         const filterProductList = productList.filter((product) => {
+    //             return product.title.includes(query) || product.description.includes(query);
+    //         });
+    //         setDisplayProduct(filterProductList);
+    //     } else {
+    //         setProductList(displayProduct);
+    //     }
+    // }
 
     return (
         <div>
-            <center>
+            {/* <center>
                 <input style={{ height: "40px", width: "50%", borderRadius: "10px" }} type="search" placeholder="Search Product" onChange={(e) => searchProduct(e.target.value)} />
-            </center>
+            </center> */}
             <table className={tableClasses}>
                 <thead>
                     <tr>
@@ -56,8 +53,7 @@ export const ViewProducts = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {!!displayProduct &&
-                        displayProduct.map((product) => {
+                    {productList.map((product) => {
                             return (
                                 <tr key={product.id}>
                                     <td className={tableDataClasses} >{product.id}</td>
