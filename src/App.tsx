@@ -7,6 +7,7 @@ import { About } from './Components/About/About';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ViewProducts } from './Components/Products/ViewProducts';
 import { DemoTable } from './Components/lib/table/DemoTable';
+import { ColumnTable } from './Components/lib/table/ColumnTable';
 function App() {
 
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/viewProducts' element={<ViewProducts />} />
           <Route path='/table' element={<DemoTable />} />
+          <Route path='/coltable' element={<ColumnTable />} />
 
 
           <Route path='*' element={<NotFoundPage />} />

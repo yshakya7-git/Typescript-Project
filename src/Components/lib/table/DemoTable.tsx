@@ -6,6 +6,7 @@ type DemoTableProps = {
     address: string;
     age: number;
     status: string;
+    progress: number;
 
 }
 
@@ -15,54 +16,63 @@ const tableData: DemoTableProps[] = [
         address: 'Patan',
         age: 22,
         status: 'Single',
+        progress: 40,
     },
     {
         name: 'Yunish Shakya',
         address: 'Mangalbazar',
         age: 27,
         status: 'Complicated',
+        progress: 15,
     },
     {
         name: 'Shereen Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 0,
     },
     {
         name: 'Hriden Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 25,
     },
     {
         name: 'Binod Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 40,
     },
     {
         name: 'Manoj Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 60,
     },
     {
         name: 'Prabesh Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 60,
     },
     {
         name: 'Rajani Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 50,
     },
     {
         name: 'Simom Shakya',
         address: 'Chakupat',
         age: 15,
         status: 'Single',
+        progress: 40,
     },
 ]
 
@@ -85,6 +95,10 @@ const columns = [
     }),
     columnHelper.accessor('status', {
         header: () => 'Status',
+        footer: info => info.column.id,
+    }),
+    columnHelper.accessor('progress', {
+        header: () => 'Progress',
         footer: info => info.column.id,
     }),
 ]

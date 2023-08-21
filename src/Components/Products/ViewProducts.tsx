@@ -2,6 +2,8 @@ import { useQuery } from 'react-query';
 import { useState } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
+// import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
+
 
 export const ViewProducts = () => {
 
@@ -18,7 +20,7 @@ export const ViewProducts = () => {
                 (res) => (setProductList(res.data)
             ),
     ));
-
+console.log(productList, "hello");
     if (isLoading) {
         return 'Loading...'
     }
@@ -27,19 +29,11 @@ export const ViewProducts = () => {
         return 'An error has occurred:'
     }
 
-    // const searchProduct = (query: any) => {
-    //     if (!query) {
-    //         const filterProductList = productList.filter((product) => {
-    //             return product.title.includes(query) || product.description.includes(query);
-    //         });
-    //         setDisplayProduct(filterProductList);
-    //     } else {
-    //         setProductList(displayProduct);
-    //     }
-    // }
 
     return (
         <div>
+
+
             {/* <center>
                 <input style={{ height: "40px", width: "50%", borderRadius: "10px" }} type="search" placeholder="Search Product" onChange={(e) => searchProduct(e.target.value)} />
             </center> */}
