@@ -1,5 +1,5 @@
 import { SortingState, createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { useState, useReducer } from 'react';
+import { useState } from 'react';
 
 type DemoTableProps = {
     name: string;
@@ -105,7 +105,6 @@ const columns = [
 
 export const DemoTable = () => {
 
-    const rerender = useReducer(() => ({}), {})[1];
     const [data] = useState(() => [...tableData]);
 
     const [sorting, setSorting] = useState<SortingState>([]);
@@ -124,8 +123,8 @@ export const DemoTable = () => {
 
     return (
         <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
-            <h2>DemoTable</h2>
-            <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+            <h2>Demo for Displaying Table</h2>
+            <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 py-[2rem]'>
                 <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                     {table.getHeaderGroups().map(headerGroup => (
                         <tr key={headerGroup.id}>
@@ -183,10 +182,6 @@ export const DemoTable = () => {
                 {table.getRowModel().rows.length}
             </div>
 
-            <div>
-                <button onClick={() => rerender()}>Force Rerender</button>
-            </div>
-            {/* <pre>{JSON.stringify(sorting, null, 2)}</pre> */}
         </div>
     )
 }
