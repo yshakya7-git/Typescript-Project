@@ -23,6 +23,11 @@ export const SideBarItems = [
         to: "/coltable"
     },
     {
+        title: "PageTable",
+        icons: <AiOutlineBook/>,
+        to: "/pagetable"
+    },
+    {
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,

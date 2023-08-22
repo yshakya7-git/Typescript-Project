@@ -24,7 +24,7 @@ function App() {
           <Route path='/viewProducts' element={<ViewProducts />} />
           <Route path='/table' element={<DemoTable />} />
           <Route path='/coltable' element={<ColumnTable />} />
-
+          
 
           <Route path='*' element={<NotFoundPage />} />
 
