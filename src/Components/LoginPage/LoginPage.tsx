@@ -15,7 +15,7 @@ export const LoginPage = () => {
       <div className="h-screen flex items-center justify-center ">
         <Image />
         <div className='w-[300px] h-[480px] bg-[#f5f5f5] flex flex-col justify-center p-[2rem] items-center'>
-          <div className='w-full flex flex-col p-[0.5rem]'>
+          <div className='w-full flex flex-col p-[-2.5rem]'>
             <h3 className='text-2xl font-semibold mb-2 mr-10'>Login</h3>
             <p className='text-sm w-[245px]'>Welcome Back ! Please enter your details.</p>
             <Formik initialValues={{ uname: '', password: '' }}
@@ -55,7 +55,7 @@ export const LoginPage = () => {
                       ) : null}
                       
                       <br />
-                      <Button secondary={true} children="Login"></Button>
+                      <Button primary={true} danger={false} children="Login"></Button>
                     </form>
 
                   </>

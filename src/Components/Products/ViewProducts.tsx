@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import classNames from "classnames";
+import { Button } from "../lib/Button";
+import { NavLink } from "react-router-dom";
 
 type Product = {
     id: number;
@@ -81,6 +83,12 @@ export const ViewProducts = () => {
         <div className="flex flex-col w-screen">
             <div className="overflow-x-visible w-[40px] ml-[10rem] mr-[20rem]">
                 <div className="inline-block min-w-full items-center ml-96 mt-10">
+                    <div>
+                        <NavLink to={'/addProducts'}>
+                            <Button danger={true} primary={false} children='Add +' />
+                        </NavLink>
+                    </div>
+                    <br />
                     <div className='overflow-scroll h-[500px] w-[100%] '>
                         <table className='border text-center text-sm font-light dark:border-neutral-500'>
                             <thead className='border-b font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
@@ -107,7 +115,7 @@ export const ViewProducts = () => {
                                             )}
 
                                             >
-                                                <span className={classNames(cell.column.columnDef.header == 'Description' || cell.column.columnDef.header == 'Title'  ? ' inline-block truncate w-[250px] ' : '')}>
+                                                <span className={classNames(cell.column.columnDef.header == 'Description' || cell.column.columnDef.header == 'Title' ? ' inline-block truncate w-[250px] ' : '')}>
                                                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                                 </span>
 

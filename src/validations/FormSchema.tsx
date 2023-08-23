@@ -9,6 +9,7 @@ export const FormSchema = object({
         .required("No password provided.")
         .min(8, "Must Contain 8 Characters")
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character")
-      
+            "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"),
+
+
 })  

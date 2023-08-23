@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ViewProducts } from './Components/Products/ViewProducts';
 import { SharedLayout } from './Components/shareLayout/SharedLayout';
 import { LoginPage } from './Components/LoginPage/LoginPage';
+import { AddProducts } from './Components/Products/AddProducts';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<SharedLayout />} >
             <Route path='/about' element={<About />} />
             <Route path='/viewProducts' element={<ViewProducts />} />
+            <Route path='/addProducts' element={<AddProducts />} />
             <Route path='*' element={<NotFoundPage />} />
           </Route>
 

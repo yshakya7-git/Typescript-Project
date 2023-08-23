@@ -20,7 +20,7 @@ export const SideBarItems = [
         submenuItems: [
             {
                 title: "Add Products",
-                to: "/addProduct"
+                to: "/addProducts"
             },
             {
                 title: "Product List",
