@@ -13,21 +13,6 @@ export const SideBarItems = [
         to: "/about"
     },
     {
-        title: "DemoTable",
-        icons: <AiOutlineBook/>,
-        to: "/table"
-    },
-    {
-        title: "ColTable",
-        icons: <AiOutlineBook/>,
-        to: "/coltable"
-    },
-    {
-        title: "PageTable",
-        icons: <AiOutlineBook/>,
-        to: "/pagetable"
-    },
-    {
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,
