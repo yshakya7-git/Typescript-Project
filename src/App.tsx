@@ -7,6 +7,8 @@ import { ViewProducts } from './Components/Products/ViewProducts';
 import { SharedLayout } from './Components/shareLayout/SharedLayout';
 import { LoginPage } from './Components/LoginPage/LoginPage';
 import { AddProducts } from './Components/Products/AddProducts';
+// import { DemoForm } from './Components/lib/react-hook-form/DemoForm';
+import { FormDemo } from './Components/lib/react-hook-form/FormDemo';
 
 function App() {
 
@@ -18,8 +20,10 @@ function App() {
           <Route path='/' element={<LoginPage />} />
           <Route path='/' element={<SharedLayout />} >
             <Route path='/about' element={<About />} />
+            <Route path='/formDemo' element={<FormDemo />} />
             <Route path='/viewProducts' element={<ViewProducts />} />
             <Route path='/addProducts' element={<AddProducts />} />
+            
             <Route path='*' element={<NotFoundPage />} />
           </Route>
 

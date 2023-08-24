@@ -22,7 +22,7 @@ const SideBar = () => {
                             <h1 className={`text-white font-medium text-xl justify-center ${!open && "scale-0"} `}>Admin</h1>
                         </div>
                     </div>
-{/* TODO: use nav and NavLink instead of ul li */}
+{/* TODO: use nav and NavLink instead of ul li => done */}
                     <nav className='p-[12px] justify-center'>
                         {SideBarItems.map((sidebar, index) => (
                             <>

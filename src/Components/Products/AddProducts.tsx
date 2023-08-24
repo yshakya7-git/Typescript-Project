@@ -13,7 +13,7 @@ export const AddProducts = () => {
 
     return (
         <div className="items-center ml-96 mt-10">
-            <h3 className={classNames("font-bold")}>AddProducts</h3>
+            <h3 className={classNames("font-bold")}>AddProducts Form using Formik and Yup validation</h3>
             <Formik initialValues={{ title: '', description: '', price: 0 }}
                 validationSchema={ProductForm}
                 onSubmit={(values) => {
@@ -65,7 +65,7 @@ export const AddProducts = () => {
                                 ) : null}
 
                                 <br />
-                                <Button primary={true} danger={false} children="Submit"></Button>
+                                <Button>Submit</Button>
                             </form>
 
                         </div>

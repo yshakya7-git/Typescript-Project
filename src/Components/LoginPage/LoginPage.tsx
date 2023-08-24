@@ -55,7 +55,7 @@ export const LoginPage = () => {
                       ) : null}
                       
                       <br />
-                      <Button primary={true} danger={false}>Login</Button>
+                      <Button>Login</Button>
                     </form>
 
                   </>

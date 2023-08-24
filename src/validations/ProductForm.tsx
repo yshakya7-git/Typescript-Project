@@ -10,9 +10,10 @@ export const ProductForm = object({
         .min(5, "Must contain 5 characters")
         .max(100, 'Letters Exceeded'),
     price: number()
+        .transform((value) => Number.isNaN(value) ? null : value)
         .required("Price is required")
         .positive()
-        .max(10, 'Maximum 10 digits')
+        .max(512 * 1024 * 1024, 'Digits limited')
         .min(1),
 
 

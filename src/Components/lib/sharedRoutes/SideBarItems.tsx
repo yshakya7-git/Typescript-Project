@@ -13,6 +13,11 @@ export const SideBarItems = [
         to: "/about"
     },
     {
+        title: "FormDemo",
+        icons: <AiOutlineBook/>,
+        to: "/formDemo"
+    },
+    {
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,
@@ -28,7 +33,7 @@ export const SideBarItems = [
             },
             {
                 title: "Buy Products",
-                to: "buyProducts"
+                to: "/buyProducts"
             },
         ],
     },
