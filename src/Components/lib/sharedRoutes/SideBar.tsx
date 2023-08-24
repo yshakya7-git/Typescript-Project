@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineContacts, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 const SideBar = () => {
 
     const [open, setOpen] = useState(true);
@@ -21,11 +22,11 @@ const SideBar = () => {
                             <h1 className={`text-white font-medium text-xl justify-center ${!open && "scale-0"} `}>Admin</h1>
                         </div>
                     </div>
-
-                    <ul className='p-[12px] justify-center'>
+{/* TODO: use nav and NavLink instead of ul li */}
+                    <nav className='p-[12px] justify-center'>
                         {SideBarItems.map((sidebar, index) => (
                             <>
-                                <li key={index} className={`text-white text-sm flex items-center space-x-4 cursor-pointer p-3 `}>
+                                <NavLink to={sidebar.to} key={index} className={`text-white text-sm flex items-center space-x-4 cursor-pointer p-3 `}>
                                     <span
                                         className='text-2xl block float-left'>
                                         {sidebar.icons ? sidebar.icons : <AiOutlineContacts />}
@@ -37,7 +38,7 @@ const SideBar = () => {
                                     {sidebar.submenu && open && (
                                         <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"} space-x-reverse`} onClick={() => setSubMenuOpen(!submenuOpen)} />
                                     )}
-                                </li>
+                                </NavLink>
 
                                 {sidebar.submenu && submenuOpen && open && (
                                     <ul>
@@ -56,15 +57,8 @@ const SideBar = () => {
                                 )}
                             </>
                         ))}
-                    </ul>
+                    </nav>
                 </div>
-                {/* <div className='flex h-screen'>
-                    <AboutImage />
-                </div>
-            </div >
-            <div className='flex bottom'> 
-                <Footer/>
-            </div> */}
             </div>
         </div>
     )

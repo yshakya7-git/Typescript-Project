@@ -1,9 +1,7 @@
 import { ColumnDef, flexRender, getCoreRowModel, getPaginationRowModel, useReactTable } from "@tanstack/react-table";
 import axios from "axios";
-import { useState } from "react";
 import { useQuery } from "react-query";
 import classNames from "classnames";
-import { Button } from "../lib/Button";
 import { NavLink } from "react-router-dom";
 
 type Product = {
@@ -55,7 +53,12 @@ const productColumns: ColumnDef<Product, any>[] = [
 
 
 export const ViewProducts = () => {
-    const [productList, setProductList] = useState<any[]>([]);
+    const { data: productList = [] } = useQuery(["products"], () =>
+        axios.get(' https://api.escuelajs.co/api/v1/products')
+            .then(
+                (res) => res.data,
+            ));
+
 
     const table = useReactTable({
         data: productList,
@@ -63,39 +66,21 @@ export const ViewProducts = () => {
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
     });
-
-    const { isLoading, error } = useQuery(["repo"], () =>
-        axios.get(' https://api.escuelajs.co/api/v1/products')
-            .then(
-                (res) => (setProductList(res.data)
-                ),
-            ));
-    console.log(productList, "hello");
-    if (isLoading) {
-        return 'Loading...'
-    }
-
-    if (error) {
-        return 'An error has occurred:'
-    }
-
     return (
         <div className="flex flex-col w-screen">
             <div className="overflow-x-visible w-[40px] ml-[10rem] mr-[20rem]">
                 <div className="inline-block min-w-full items-center ml-96 mt-10">
                     <div>
-                        <NavLink to={'/addProducts'}>
-                            <Button danger={true} primary={false} children='Add +' />
-                        </NavLink>
+                        <NavLink to={'/addProducts'} className="bg-red-600">Add +</NavLink>
                     </div>
                     <br />
-                    <div className='overflow-scroll h-[500px] w-[100%] '>
+                    <div className='overflow-auto md:overflow-scroll hover:overflow-auto h-[450px] w-[100%]  '>
                         <table className='border text-center text-sm font-light dark:border-neutral-500'>
-                            <thead className='border-b font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+                            <thead className='sticky top-0 border-b font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                                 {table.getHeaderGroups().map(headerGroup => (
-                                    <tr key={headerGroup.id}>
+                                    <tr key={headerGroup.id} >
                                         {headerGroup.headers.map(header => (
-                                            <th key={header.id} colSpan={header.colSpan} className="border-r px-6 py-4 dark:border-neutral-500">
+                                            <th key={header.id} colSpan={header.colSpan} className=" border-r px-6 py-4 dark:border-neutral-500">
                                                 {header.isPlaceholder
                                                     ? null
                                                     : flexRender(
@@ -107,7 +92,7 @@ export const ViewProducts = () => {
                                     </tr>
                                 ))}
                             </thead>
-                            <tbody >
+                            <tbody className="pt-1">
                                 {table.getRowModel().rows.map(row => (
                                     <tr key={row.id} className="border-b dark:border-neutral-500">
                                         {row.getVisibleCells().map(cell => (
