@@ -14,6 +14,7 @@ export const button = tv({
             primary: "bg-blue-500 text-white",
             secondary: "bg-yellow-500 hover:bg-purple-700",
             success: "bg-green-500 hover:bg-green-700",
+            danger: "bg-red-500 hover:bg-red-700",
         },
         size: {
             small: "py-0 px-2 text-xs",
@@ -43,6 +44,11 @@ export const button = tv({
             color: "success",
             flat: true,
             class: "bg-green-500/20",
+        },
+        {
+            color: "danger",
+            flat: true,
+            class: "bg-red-500/20",
         },
     ],
 });

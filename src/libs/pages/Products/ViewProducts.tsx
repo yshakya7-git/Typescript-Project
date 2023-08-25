@@ -53,12 +53,12 @@ const productColumns: ColumnDef<Product, any>[] = [
 
 
 export const ViewProducts = () => {
-    const { data: productList = [] } = useQuery(["products"], () =>
-        axios.get(' https://api.escuelajs.co/api/v1/products')
+    const { data: productList = [] } = useQuery(["repo"], () =>
+        axios.get('https://fakestoreapi.com/products')
             .then(
                 (res) => res.data,
             ));
-
+console.log(productList, 'hello');
 
     const table = useReactTable({
         data: productList,

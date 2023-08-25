@@ -1,8 +1,8 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { ProductForm } from "../../../validations/ProductForm";
-import { Button } from "../Button";
-import { inputField } from "../variants/inputField";
+import { inputField } from "../../../libs/variants/inputField";
+import { ProductForm } from "../../../libs/validations/ProductForm";
+import { Button } from "../buttons/Button";
 
 type FormData = {
     title: string;
@@ -22,9 +22,12 @@ export const FormDemo = () => {
 
     return (
         <header className="items-center ml-[40rem] mt-10 fixed">
-            <h2>Form using React-Hook-Form</h2>
-            <form onSubmit={onSubmitHandler} className="bg-orange-100 w-[400px] h-[550px] shadow-md rounded px-8 pt-6 pb-8 items-center">
-                <h5>Add Products.</h5>
+           
+            <form onSubmit={onSubmitHandler} className="bg-gray-100 w-[400px] h-[560px] shadow-md rounded px-8 pt-6 pb-8 items-center">
+            <h2 className="font-bold text-blue-950 text-xl text-center">Form using React-Hook-Form</h2>
+                <h5 className="font-normal text-sm text-center">Add Products.</h5>
+                <hr />
+                <br />
                 <label htmlFor="title" className={`block font-bold text-sm mb-2 ${errors.title?.message ? "text-red-500" : "text-purple-40"}`}>Title :</label>
                 {errors.title ? (
                     <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.title?.message}</span>

@@ -1,4 +1,4 @@
-import { ButtonProps, button } from './variants/button';
+import { ButtonProps, button } from "../../variants/button"
 
 export const Button = (props : ButtonProps) => {
 

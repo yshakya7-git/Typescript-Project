@@ -18,6 +18,11 @@ export const SideBarItems = [
         to: "/formDemo"
     },
     {
+        title: "Tabs",
+        icons: <AiOutlineBook/>,
+        to: "/tab"
+    },
+    {
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,

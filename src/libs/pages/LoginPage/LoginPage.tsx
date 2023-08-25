@@ -1,15 +1,17 @@
-import { Button } from '../lib/Button'
-import { InputField } from '../lib/InputField'
+
 import { Formik } from 'formik'
-import { FormSchema } from '../../validations/FormSchema'
-import { useStore } from '../../store/useStore'
 import { useNavigate } from 'react-router-dom';
-import { Image } from '../lib/Image'
+import { Image } from '../../ui(components)/Image';
+import { FormSchema } from '../../validations/FormSchema';
+import { InputField } from '../../ui(components)/InputField';
+import { Button } from '../../ui(components)/buttons/Button';
+import { useSessionStore } from '../../store/useSessionStore';
+
 
 export const LoginPage = () => {
 
   const navigate = useNavigate();
-  const { setUname, setPassword } = useStore();
+  const { setUname, setPassword } = useSessionStore();
   return (
   
       <div className="h-screen flex items-center justify-center ">

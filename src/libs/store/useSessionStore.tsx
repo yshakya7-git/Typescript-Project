@@ -8,7 +8,7 @@ export interface ZustandInterface {
 
 }
 
-export const useStore = create<ZustandInterface>((set) => ({
+export const useSessionStore = create<ZustandInterface>((set) => ({
     uname: "",
     password: "",
     setUname: (value) => set({uname: value}),

@@ -1,11 +1,11 @@
 import { Formik } from "formik";
-import { InputField } from "../lib/InputField";
-import { Button } from "../lib/Button";
-import { useProductStore } from "../../store/useProduct";
 import { useNavigate } from "react-router-dom";
-import { ProductForm } from "../../validations/ProductForm";
-import { TextArea } from "../lib/TextArea";
 import classNames from "classnames";
+import { ProductForm } from "../../validations/ProductForm";
+import { InputField } from "../../ui(components)/InputField";
+import { TextArea } from "../../ui(components)/TextArea";
+import { Button } from "../../ui(components)/buttons/Button";
+import { useProductStore } from "../../store/useProductStore";
 
 export const AddProducts = () => {
     const { setTitle, setDescription, setPrice } = useProductStore();

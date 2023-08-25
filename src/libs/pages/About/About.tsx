@@ -1,5 +1,5 @@
-import ABOUT from "../../assets/cover.jpg";
-import SideBar from "../lib/sharedRoutes/SideBar";
+import ABOUT from "../../../assets/cover.jpg";
+import SideBar from "../../shared/sharedRoutes/SideBar";
 
 export const About = () => {
   <SideBar />

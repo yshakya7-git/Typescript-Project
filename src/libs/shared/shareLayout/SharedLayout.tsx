@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import SideBar from "../lib/sharedRoutes/SideBar"
+import SideBar from "../sharedRoutes/SideBar"
 
 export const SharedLayout = () => {
   return (

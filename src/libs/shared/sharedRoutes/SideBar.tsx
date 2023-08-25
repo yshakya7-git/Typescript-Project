@@ -33,7 +33,7 @@ const SideBar = () => {
                                     </span>
                                     <span
                                         className={`text-base font-medium flex-0.5 ${!open && "scale-0"}`}>
-                                        <Link to={sidebar.to}>{sidebar.title}</Link>
+                                        <NavLink to={sidebar.to}>{sidebar.title}</NavLink>
                                     </span>
                                     {sidebar.submenu && open && (
                                         <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"} space-x-reverse`} onClick={() => setSubMenuOpen(!submenuOpen)} />
