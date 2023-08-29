@@ -21,6 +21,11 @@ export const TopbarItems = [
     
 },
 {
+    title: "DialogDemo",
+    to: "/dialogs"
+    
+},
+{
     title: "Logout",
     to:"/"
 

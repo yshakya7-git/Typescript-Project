@@ -14,7 +14,7 @@ export const BuyProducts = () => {
     console.log(products);
 
     return (
-        <header className="ml-[20rem] mt-[2rem] ">
+        <header className="ml-[20rem] mt-[2rem]">
             <section className='grid grid-cols-2 gap-2 m-auto w-[65%] ml-[9rem] p-[2.5rem] bg-white border-radius shadow-md items-center'>
                 <div className='grid grid-rows-2'>
                     <div className='border-radius-[6px] bg-red h-[250px] w-[250px]'>

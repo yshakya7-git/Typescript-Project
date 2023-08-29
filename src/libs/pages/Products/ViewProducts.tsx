@@ -2,7 +2,7 @@ import { ColumnDef, flexRender, getCoreRowModel, getPaginationRowModel, useReact
 import axios from "axios";
 import { useQuery } from "react-query";
 import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import { DialogDemo } from "../../ui(components)/dialogs/DialogDemo";
 
 type Product = {
     id: number;
@@ -70,8 +70,8 @@ console.log(productList, 'hello');
         <header className="items-center mt-10 fixed">
             <div className="overflow-x-visible w-[40px] ml-[10rem] mr-[20rem]">
                 <div className="inline-block min-w-full items-center ml-96 mt-10">
-                    <div>
-                        <NavLink to={'/addProducts'} className="bg-red-600">Add +</NavLink>
+                    <div className="relative ">
+                        <DialogDemo />
                     </div>
                     <br />
                     <div className='overflow-auto md:overflow-scroll hover:overflow-auto h-[450px] w-[100%]  '>

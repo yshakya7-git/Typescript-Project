@@ -14,6 +14,7 @@ import { FormDemo } from './libs/ui(components)/react-hook-form/FormDemo';
 import { Home } from './libs/pages/Home/Home';
 import { BuyProducts } from './libs/pages/Products/BuyProducts';
 import { ProductPage } from './libs/pages/Products/ProductPage';
+import { DialogDemo } from './libs/ui(components)/dialogs/DialogDemo';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/formDemo' element={<FormDemo />} />
             <Route path='/tab' element={<TabsDemo />} />
+            <Route path='/dialogs' element={<DialogDemo />} />
             <Route path='/products' element={<ProductPage />} />
             <Route path='/viewProducts' element={<ViewProducts />} />
             <Route path='/addProducts' element={<AddProducts />} />
