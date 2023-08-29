@@ -11,6 +11,9 @@ import { ViewProducts } from './libs/pages/Products/ViewProducts';
 import { AddProducts } from './libs/pages/Products/AddProducts';
 import NotFoundPage from './libs/pages/NotFound/NotFoundPage';
 import { FormDemo } from './libs/ui(components)/react-hook-form/FormDemo';
+import { Home } from './libs/pages/Home/Home';
+import { BuyProducts } from './libs/pages/Products/BuyProducts';
+import { ProductPage } from './libs/pages/Products/ProductPage';
 
 function App() {
 
@@ -21,15 +24,16 @@ function App() {
         <Routes>
           <Route path='/' element={<LoginPage />} />
           <Route path='/' element={<SharedLayout />} >
+            <Route path='/home' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/formDemo' element={<FormDemo />} />
             <Route path='/tab' element={<TabsDemo />} />
+            <Route path='/products' element={<ProductPage />} />
             <Route path='/viewProducts' element={<ViewProducts />} />
             <Route path='/addProducts' element={<AddProducts />} />
-
-            <Route path='*' element={<NotFoundPage />} />
+            <Route path='/buyProducts/:id' element={<BuyProducts />} />
           </Route>
-
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </Router>
 

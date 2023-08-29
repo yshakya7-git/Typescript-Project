@@ -1,4 +1,4 @@
-import {AiOutlineHome, AiOutlineShoppingCart, AiOutlineBook, AiOutlineLogout} from 'react-icons/ai';
+import {AiOutlineHome, AiOutlineShoppingCart, AiOutlineBook, AiOutlineLogout, AiOutlineContacts} from 'react-icons/ai';
 
 
 export const SideBarItems = [
@@ -14,20 +14,21 @@ export const SideBarItems = [
     },
     {
         title: "FormDemo",
-        icons: <AiOutlineBook/>,
         to: "/formDemo"
     },
     {
         title: "Tabs",
-        icons: <AiOutlineBook/>,
         to: "/tab"
     },
     {
         title: "Products",
         icons: <AiOutlineShoppingCart/>,
         submenu: true,
-        to: "",
         submenuItems: [
+            {
+                title: "Products Details",
+                to: "/products"
+            },
             {
                 title: "Add Products",
                 to: "/addProducts"
@@ -38,12 +39,13 @@ export const SideBarItems = [
             },
             {
                 title: "Buy Products",
-                to: "/buyProducts"
+                to: "/buyProducts/:id"
             },
         ],
     },
 {
     title: "Contacts",
+    icons: <AiOutlineContacts />,
     to: "/contacts"
     
 },

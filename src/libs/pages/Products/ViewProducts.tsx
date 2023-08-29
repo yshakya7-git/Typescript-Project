@@ -67,7 +67,7 @@ console.log(productList, 'hello');
         getPaginationRowModel: getPaginationRowModel(),
     });
     return (
-        <div className="flex flex-col w-screen">
+        <header className="items-center mt-10 fixed">
             <div className="overflow-x-visible w-[40px] ml-[10rem] mr-[20rem]">
                 <div className="inline-block min-w-full items-center ml-96 mt-10">
                     <div>
@@ -170,6 +170,6 @@ console.log(productList, 'hello');
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     )
 }

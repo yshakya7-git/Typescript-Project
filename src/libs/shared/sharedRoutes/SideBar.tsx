@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineContacts, AiOutlineArrowDown } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineCodeSandbox, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -29,7 +29,7 @@ const SideBar = () => {
                                 <NavLink to={sidebar.to} key={index} className={`text-white text-sm flex items-center space-x-4 cursor-pointer p-3 `}>
                                     <span
                                         className='text-2xl block float-left'>
-                                        {sidebar.icons ? sidebar.icons : <AiOutlineContacts />}
+                                        {sidebar.icons ? sidebar.icons : <AiOutlineCodeSandbox />}
                                     </span>
                                     <span
                                         className={`text-base font-medium flex-0.5 ${!open && "scale-0"}`}>

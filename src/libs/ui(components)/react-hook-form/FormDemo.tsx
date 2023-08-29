@@ -22,8 +22,7 @@ export const FormDemo = () => {
 
     return (
         <header className="items-center ml-[40rem] mt-10 fixed">
-           
-            <form onSubmit={onSubmitHandler} className="bg-gray-100 w-[400px] h-[560px] shadow-md rounded px-8 pt-6 pb-8 items-center">
+            <form onSubmit={onSubmitHandler} className="bg-gray-100 mt-[65px] w-[400px] h-[560px] shadow-md rounded px-8 pt-6 pb-8 items-center">
             <h2 className="font-bold text-blue-950 text-xl text-center">Form using React-Hook-Form</h2>
                 <h5 className="font-normal text-sm text-center">Add Products.</h5>
                 <hr />
