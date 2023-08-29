@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineUser, AiOutlineCodeSandbox, AiOutlineArrowDown } from 'react-icons/ai';
 import { SideBarItems } from './SideBarItems';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const SideBar = () => {
 
@@ -26,14 +26,14 @@ const SideBar = () => {
                     <nav className='p-[12px] justify-center'>
                         {SideBarItems.map((sidebar, index) => (
                             <>
-                                <NavLink to={sidebar.to} key={index} className={`text-white text-sm flex items-center space-x-4 cursor-pointer p-3 `}>
+                                <NavLink to={`${sidebar.to}`} key={index} className={`text-white text-sm flex items-center space-x-4 cursor-pointer p-3 `}>
                                     <span
                                         className='text-2xl block float-left'>
                                         {sidebar.icons ? sidebar.icons : <AiOutlineCodeSandbox />}
                                     </span>
                                     <span
                                         className={`text-base font-medium flex-0.5 ${!open && "scale-0"}`}>
-                                        <NavLink to={sidebar.to}>{sidebar.title}</NavLink>
+                                        <NavLink to={`${sidebar.to}`}>{sidebar.title}</NavLink>
                                     </span>
                                     {sidebar.submenu && open && (
                                         <AiOutlineArrowDown className={`${submenuOpen && "rotate-180"} space-x-reverse`} onClick={() => setSubMenuOpen(!submenuOpen)} />
@@ -41,18 +41,17 @@ const SideBar = () => {
                                 </NavLink>
 
                                 {sidebar.submenu && submenuOpen && open && (
-                                    <ul>
+                                    <nav>
                                         {sidebar.submenuItems.map((subMenuItem, index) => (
-                                            <li key={index}
+                                            <NavLink to={subMenuItem.to} key={index}
                                                 className={`text-white text-xs flex items-center space-x-4 cursor-pointer p-[0.5rem] px-[3.5rem]`}>
                                                 <span className={`${!submenuOpen && "scale-0"}`}>
-                                                    <Link to={subMenuItem.to}>{subMenuItem.title}</Link>
+                                                    <NavLink to={subMenuItem.to}>{subMenuItem.title}</NavLink>
                                                 </span>
-
-                                            </li>
+                                            </NavLink>
                                         ))}
 
-                                    </ul>
+                                    </nav>
 
                                 )}
                             </>

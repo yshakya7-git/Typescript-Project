@@ -37,10 +37,6 @@ export const SideBarItems = [
                 title: "Product List",
                 to: "/viewProducts"
             },
-            {
-                title: "Buy Products",
-                to: "/buyProducts/:id"
-            },
         ],
     },
 {
