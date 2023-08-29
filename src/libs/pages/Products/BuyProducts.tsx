@@ -11,30 +11,33 @@ export const BuyProducts = () => {
                 (res) => res.data,
             ));
 
-    console.log(products)
+    console.log(products);
 
     return (
-        <header className="ml-[20rem] mt-[2rem]">
-            <div className="row py-4">
-                <div className="col-md-6">
-                    <img src={products.image} alt={products.image} height="350px" width="350px" />
+        <header className="ml-[20rem] mt-[2rem] ">
+            <section className='grid grid-cols-2 gap-2 m-auto w-[65%] ml-[9rem] p-[2.5rem] bg-white border-radius shadow-md items-center'>
+                <div className='grid grid-rows-2'>
+                    <div className='border-radius-[6px] bg-red h-[250px] w-[250px]'>
+                        <img className='l-[-4.5rem]' src={products.image} alt={products.image} />
+                    </div>
                 </div>
-                <div className="col-md-6">
-                    <h4 className='text-uppercase text-black-50'>{products.category}</h4>
-                    <h1 className="display-5">{products.title}</h1>
-                    <p className="rates fw-bolder"><br />
-                        Rating{products.rating && products.rating.rate}
-                        <AiFillStar />
-                    </p>
-                    <h3 className="display-6 fw-bold my-4">
-                        ${products.price}
-                    </h3>
+                <div className='grid grid-rows-2 mt-[-10rem]'>
+                    <h1 className='text-uppercase font-bold'>{products.title}</h1>
+                    <h1 className='text-uppercase font-bold'>Category : {products?.category?.toUpperCase()}</h1>
+                    <h1 className="rates font-bold">Rating : {products.rating && products.rating.rate}<AiFillStar /></h1>
+                    <h1 className="font-bold">Price : ${products.price}
+                    </h1>
                     <p className="description">{products.description}</p>
-                    <NavLink to='/products' className='btn btn-success ms-2'>
-                                View Products
-                            </NavLink>
+                    <br />
+                    <br />
+                    <div className="ml mt-4">
+                        <NavLink to='/products' className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" >
+                            Add To Cart
+                        </NavLink>
+                    </div>
                 </div>
-            </div>
+
+            </section>
         </header>
     )
 }

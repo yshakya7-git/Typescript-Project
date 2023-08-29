@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import { NavLink } from "react-router-dom";
 
 export const ProductPage = () => {
-
     const { data: products = [] } = useQuery(["products"], () =>
         axios.get('https://fakestoreapi.com/products')
             .then(
