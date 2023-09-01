@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { NavLink } from "react-router-dom";
+import { SearchProduct } from "./SearchProduct";
 
 export const ProductPage = () => {
-    const { data: products = [] } = useQuery(["products"], () =>
+    const { data: products = []} = useQuery(["products"], () =>
         axios.get('https://fakestoreapi.com/products')
             .then(
                 (res) => res.data,
@@ -11,6 +12,7 @@ export const ProductPage = () => {
 
     return (
         <header className="ml-[20rem] mt-[2rem]">
+            <SearchProduct/>
             <div className="grid grid-cols-4 gap-4">
                 {products.map((product: any) => {
                     return (

@@ -8,10 +8,6 @@ export const TopbarItems = [
         to: "/about"
     },
     {
-        title: "FormDemo",
-        to: "/formDemo"
-    },
-    {
         title: "Tabs",
         to: "/tab"
     },
