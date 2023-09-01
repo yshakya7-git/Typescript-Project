@@ -9,7 +9,6 @@ import { useProductStore } from "../../store/useProductStore";
 export const AddProducts = () => {
     const { setTitle, setDescription, setPrice } = useProductStore();
     const navigate = useNavigate();
-
     return (
         <div className="items-center ml-[40rem] mt-10 fixed">
             <div className="">

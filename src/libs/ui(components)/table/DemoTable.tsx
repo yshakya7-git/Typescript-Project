@@ -122,66 +122,68 @@ export const DemoTable = () => {
 
 
     return (
-        <div className='relative overflow-x-auto shadow-md sm:rounded-lg m-2'>
-            <h2>Demo for Displaying Table</h2>
-            <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 py-[2rem]'>
-                <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                    {table.getHeaderGroups().map(headerGroup => (
-                        <tr key={headerGroup.id}>
-                            {headerGroup.headers.map(header => (
-                                <th key={header.id} className='px-6 py-3'>
-                                    {header.isPlaceholder ? null : (
-                                        <div {...{
-                                            className: header.column.getCanSort() ? 'cursor-pointer select-none' : '',
-                                            onClick: header.column.getToggleSortingHandler(),
-                                        }}>
-                                            {flexRender(header.column.columnDef.header,
-                                                header.getContext()
-                                            )}
-                                            {{
-                                                asc: '🔼',
-                                                desc: '🔽',
-                                            }[header.column.getIsSorted() as string] ?? null}
-                                        </div>
-                                    )}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
+        <header className='ml-[17rem] mt-[1rem] fixed'>
+            <div className='relative overflow-x-auto shadow-md sm:rounded-lg m-2'>
+                <h2>Demo for Displaying Table</h2>
+                <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 py-[2rem]'>
+                    <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+                        {table.getHeaderGroups().map(headerGroup => (
+                            <tr key={headerGroup.id}>
+                                {headerGroup.headers.map(header => (
+                                    <th key={header.id} className='px-6 py-3'>
+                                        {header.isPlaceholder ? null : (
+                                            <div {...{
+                                                className: header.column.getCanSort() ? 'cursor-pointer select-none' : '',
+                                                onClick: header.column.getToggleSortingHandler(),
+                                            }}>
+                                                {flexRender(header.column.columnDef.header,
+                                                    header.getContext()
+                                                )}
+                                                {{
+                                                    asc: '🔼',
+                                                    desc: '🔽',
+                                                }[header.column.getIsSorted() as string] ?? null}
+                                            </div>
+                                        )}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
 
-                <tbody className='border border-slate-300 ...'>
-                    {table.getRowModel().rows.slice(0, 10).map(row => (
-                        <tr key={row.id}>
-                            {row.getVisibleCells().map(cell => (
-                                <td key={cell.id}>
-                                    {flexRender(cell.column.columnDef.cell,
-                                        cell.getContext())}
-                                </td>
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
+                    <tbody className='border border-slate-300 ...'>
+                        {table.getRowModel().rows.slice(0, 10).map(row => (
+                            <tr key={row.id}>
+                                {row.getVisibleCells().map(cell => (
+                                    <td key={cell.id}>
+                                        {flexRender(cell.column.columnDef.cell,
+                                            cell.getContext())}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
 
-                <tfoot className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-40'>
-                    {table.getFooterGroups().map(footerGroup => (
-                        <tr key={footerGroup.id}>
-                            {footerGroup.headers.map(footheader => (
-                                <th key={footheader.id}>
-                                    {footheader.isPlaceholder ? null : flexRender(footheader.column.columnDef.footer,
-                                        footheader.getContext())}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                </tfoot>
-            </table>
+                    <tfoot className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-40'>
+                        {table.getFooterGroups().map(footerGroup => (
+                            <tr key={footerGroup.id}>
+                                {footerGroup.headers.map(footheader => (
+                                    <th key={footheader.id}>
+                                        {footheader.isPlaceholder ? null : flexRender(footheader.column.columnDef.footer,
+                                            footheader.getContext())}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                    </tfoot>
+                </table>
 
-            <div>
-            Rows : 
-                {table.getRowModel().rows.length}
+                <div>
+                    Rows :
+                    {table.getRowModel().rows.length}
+                </div>
+
             </div>
-
-        </div>
+        </header>
     )
 }
