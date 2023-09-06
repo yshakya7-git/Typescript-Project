@@ -6,6 +6,7 @@ import { AddProducts } from "../../pages/Products/AddProducts";
 import { BuyProducts } from "../../pages/Products/BuyProducts";
 import { ProductPage } from "../../pages/Products/ProductPage";
 import { ViewProducts } from "../../pages/Products/ViewProducts";
+import { Todo } from "../../pages/Todo/Todo";
 import { DialogDemo } from "../../ui(components)/dialogs/DialogDemo";
 import { FormDemo } from "../../ui(components)/react-hook-form/FormDemo";
 import { TabsDemo } from "../../ui(components)/tabs/TabsDemo";
@@ -51,6 +52,10 @@ export const routes = [
     {
         path: '/buyProducts/:id',
         component: <BuyProducts/>,
+    },
+    {
+        path: '/todo',
+        component: <Todo/>,
     },
 
 ]

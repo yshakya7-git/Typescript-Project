@@ -1,12 +1,11 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { Button } from "../buttons/Button";
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { FormDemo } from "../react-hook-form/FormDemo";
+import { Button } from "../../ui(components)/buttons/Button";
+import { TodoForm } from "../../ui(components)/react-hook-form/TodoForm";
 
-
-export const DialogDemo = () => {
+export const TodoDialog = () => {
     return (
-        <header className="ml-[20rem] mt-[2rem]">
+        <div>
             <Dialog.Root>
                 <Dialog.Trigger>
                     <Button color="danger">Add+</Button>
@@ -14,11 +13,13 @@ export const DialogDemo = () => {
                 <Dialog.Portal>
                     <Dialog.Overlay className="bg-black/50 fixed inset-0">
                         <Dialog.Content className="bg-white box-border border-none ml-[35rem] mt-[2rem] mb-[50rem] shadow-md fixed l-[50%] w-[20vw] h-[32rem] max-width-[25px] p-[25px]">
-                            <Dialog.Title className="m-0 text-xm font-bold">Add Products</Dialog.Title>
+                            <Dialog.Title className="m-0 text-xm font-bold">Add Todo</Dialog.Title>
                             <Dialog.Description className="m-0 text-xs">
                                 Make changes to your profile here. Click save when you're done.
                             </Dialog.Description>
-                            <FormDemo />
+                            <Dialog.Close asChild>
+                                <TodoForm />
+                            </Dialog.Close>
                             <Dialog.Close asChild>
                                 <button aria-label="Close" className="inherit border-radius absolute top-[2rem] right-[1rem]">
                                     <Cross2Icon />
@@ -28,7 +29,6 @@ export const DialogDemo = () => {
                     </Dialog.Overlay>
                 </Dialog.Portal>
             </Dialog.Root>
-
-        </header>
+        </div>
     )
 }

@@ -2,7 +2,6 @@ import { ColumnDef, flexRender, getCoreRowModel, getPaginationRowModel, useReact
 import axios from "axios";
 import { useQuery } from "react-query";
 import classNames from "classnames";
-import { DialogDemo } from "../../ui(components)/dialogs/DialogDemo";
 
 type Product = {
     id: number;
@@ -67,16 +66,12 @@ console.log(productList, 'hello');
         getPaginationRowModel: getPaginationRowModel(),
     });
     return (
-        <header className="items-center mt-10 fixed">
+        <header className="items-center fixed">
             <div className="overflow-x-visible w-[40px] ml-[10rem] mr-[20rem]">
-                <div className="inline-block min-w-full items-center ml-96 mt-10">
-                    <div className="relative ">
-                        <DialogDemo />
-                    </div>
-                    <br />
-                    <div className='overflow-auto md:overflow-scroll hover:overflow-auto h-[450px] w-[100%]  '>
-                        <table className='border text-center text-sm font-light dark:border-neutral-500'>
-                            <thead className='sticky top-0 border-b font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+                <div className="inline-block items-center ml-[6rem] mt-4">
+                    <div className='overflow-auto md:overflow-scroll hover:overflow-auto h-[400px] w-screen  '>
+                        <table className='border text-center text-sm font-light dark:border-neutral-500 w-[72.5%]'>
+                            <thead className='sticky top-0 border-b font-medium text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                                 {table.getHeaderGroups().map(headerGroup => (
                                     <tr key={headerGroup.id} >
                                         {headerGroup.headers.map(header => (

@@ -12,8 +12,8 @@ export const TopbarItems = [
         to: "/tab"
     },
 {
-    title: "Contacts",
-    to: "/contacts"
+    title: "Todo",
+    to: "/todo"
     
 },
 {
