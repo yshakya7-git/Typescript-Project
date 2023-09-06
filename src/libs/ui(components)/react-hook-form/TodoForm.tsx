@@ -29,7 +29,7 @@ export const TodoForm = () => {
     return (
         <header>
             <form onSubmit={onSubmitHandler}>
-                <label htmlFor="title" className={`block font-bold text-sm mb-2 ${errors.title?.message ? "text-red-500" : "text-purple-40"}`}>Title :</label>
+                <label htmlFor="title" className={`block font-bold text-sm mb-2 ${errors.title?.message ? "text-red-500" : "text-purple-40"}`}>Task :</label>
                 {errors.title ? (
                     <span style={{ color: "red" }} className="text-xs w-[100px] ">{errors.title?.message}</span>
                 ) : null}

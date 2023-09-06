@@ -12,11 +12,8 @@ export const TodoDialog = () => {
                 </Dialog.Trigger>
                 <Dialog.Portal>
                     <Dialog.Overlay className="bg-black/50 fixed inset-0">
-                        <Dialog.Content className="bg-white box-border border-none ml-[35rem] mt-[2rem] mb-[50rem] shadow-md fixed l-[50%] w-[20vw] h-[32rem] max-width-[25px] p-[25px]">
-                            <Dialog.Title className="m-0 text-xm font-bold">Add Todo</Dialog.Title>
-                            <Dialog.Description className="m-0 text-xs">
-                                Make changes to your profile here. Click save when you're done.
-                            </Dialog.Description>
+                        <Dialog.Content className="bg-white box-border border-none ml-[35rem] mt-[2rem] mb-[50rem] shadow-md fixed l-[50%] w-[20vw] h-[27rem] max-width-[25px] p-[25px]">
+                            <Dialog.Title className="m-0 text-xm font-medium text-center">Add Todo</Dialog.Title>
                             <Dialog.Close asChild>
                                 <TodoForm />
                             </Dialog.Close>
