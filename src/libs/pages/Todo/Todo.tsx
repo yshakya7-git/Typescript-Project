@@ -1,12 +1,8 @@
 import { useTodoStore } from "../../store/useTodoStore";
 import { TodoDialog } from "../../ui(components)/dialogs/TodoDialog";
 
-
-
 export const Todo = () => {
-
     const { title, description, categories } = useTodoStore();
-
     return (
         <header className="ml-[20rem] mt-[2rem]">
             <TodoDialog />
